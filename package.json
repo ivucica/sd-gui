@@ -1,0 +1,30 @@
+{
+  "name": "sd-gui",
+  "version": "1.0.0",
+  "scripts": {
+    "gen": "openapi-generator generate -g typescript-fetch -i sd-openapi.json -o ./sd-api-client",
+    "gen-via-npx": "export JAVA_HOME=\"${JAVA_HOME:-/opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home}\"; if [[ ! -e \"${JAVA_HOME}\" ]] ; then export JAVA_HOME=$(/usr/libexec/java_home) ; fi ; if [[ -e ${JAVA_HOME} ]] ; then npx @openapitools/openapi-generator-cli generate -g typescript-fetch -i sd-openapi.json -o ./sd-api-client ; fi",
+    "build": "tsc --outDir dist && cp index.html dist/index.html",
+    "postbuild": "cp package.json dist/package.json && cd dist && npm install --only=production",
+    "start-basic": "npx http-server ./dist",
+    "start-via-devserver": "npx web-dev-server",
+    "start-via-devserver-dist": "npx web-dev-server --node-resolve --open -r ./dist --watch",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@lit/reactive-element": "^2.0.4",
+    "@material/mwc-button": "^0.27.0",
+    "@material/mwc-list": "^0.27.0",
+    "@material/mwc-select": "^0.27.0",
+    "@material/mwc-textfield": "^0.27.0",
+    "lit": "^3.2.1",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.15.3",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^17.0.13",
+    "@web/dev-server": "^0.4.6",
+    "http-server": "^14.0.0"
+  }
+}
