@@ -56,11 +56,11 @@ export function HTTPValidationErrorFromJSONTyped(json: any, ignoreDiscriminator:
     };
 }
 
-  export function HTTPValidationErrorToJSON(json: any): HTTPValidationError {
-      return HTTPValidationErrorToJSONTyped(json, false);
-  }
+export function HTTPValidationErrorToJSON(json: any): HTTPValidationError {
+    return HTTPValidationErrorToJSONTyped(json, false);
+}
 
-  export function HTTPValidationErrorToJSONTyped(value?: HTTPValidationError | null, ignoreDiscriminator: boolean = false): any {
+export function HTTPValidationErrorToJSONTyped(value?: HTTPValidationError | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

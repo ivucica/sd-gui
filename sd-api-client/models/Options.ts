@@ -1672,11 +1672,11 @@ export function OptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): O
     };
 }
 
-  export function OptionsToJSON(json: any): Options {
-      return OptionsToJSONTyped(json, false);
-  }
+export function OptionsToJSON(json: any): Options {
+    return OptionsToJSONTyped(json, false);
+}
 
-  export function OptionsToJSONTyped(value?: Options | null, ignoreDiscriminator: boolean = false): any {
+export function OptionsToJSONTyped(value?: Options | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

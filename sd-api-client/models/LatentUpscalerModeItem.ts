@@ -49,11 +49,11 @@ export function LatentUpscalerModeItemFromJSONTyped(json: any, ignoreDiscriminat
     };
 }
 
-  export function LatentUpscalerModeItemToJSON(json: any): LatentUpscalerModeItem {
-      return LatentUpscalerModeItemToJSONTyped(json, false);
-  }
+export function LatentUpscalerModeItemToJSON(json: any): LatentUpscalerModeItem {
+    return LatentUpscalerModeItemToJSONTyped(json, false);
+}
 
-  export function LatentUpscalerModeItemToJSONTyped(value?: LatentUpscalerModeItem | null, ignoreDiscriminator: boolean = false): any {
+export function LatentUpscalerModeItemToJSONTyped(value?: LatentUpscalerModeItem | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

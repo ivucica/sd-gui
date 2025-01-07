@@ -57,11 +57,11 @@ export function SDVaeItemFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     };
 }
 
-  export function SDVaeItemToJSON(json: any): SDVaeItem {
-      return SDVaeItemToJSONTyped(json, false);
-  }
+export function SDVaeItemToJSON(json: any): SDVaeItem {
+    return SDVaeItemToJSONTyped(json, false);
+}
 
-  export function SDVaeItemToJSONTyped(value?: SDVaeItem | null, ignoreDiscriminator: boolean = false): any {
+export function SDVaeItemToJSONTyped(value?: SDVaeItem | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

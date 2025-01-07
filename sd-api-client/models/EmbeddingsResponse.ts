@@ -65,11 +65,11 @@ export function EmbeddingsResponseFromJSONTyped(json: any, ignoreDiscriminator: 
     };
 }
 
-  export function EmbeddingsResponseToJSON(json: any): EmbeddingsResponse {
-      return EmbeddingsResponseToJSONTyped(json, false);
-  }
+export function EmbeddingsResponseToJSON(json: any): EmbeddingsResponse {
+    return EmbeddingsResponseToJSONTyped(json, false);
+}
 
-  export function EmbeddingsResponseToJSONTyped(value?: EmbeddingsResponse | null, ignoreDiscriminator: boolean = false): any {
+export function EmbeddingsResponseToJSONTyped(value?: EmbeddingsResponse | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

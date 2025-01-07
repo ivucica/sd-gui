@@ -49,11 +49,11 @@ export function PNGInfoRequestFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
-  export function PNGInfoRequestToJSON(json: any): PNGInfoRequest {
-      return PNGInfoRequestToJSONTyped(json, false);
-  }
+export function PNGInfoRequestToJSON(json: any): PNGInfoRequest {
+    return PNGInfoRequestToJSONTyped(json, false);
+}
 
-  export function PNGInfoRequestToJSONTyped(value?: PNGInfoRequest | null, ignoreDiscriminator: boolean = false): any {
+export function PNGInfoRequestToJSONTyped(value?: PNGInfoRequest | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -64,11 +64,11 @@ export function TextToImageResponseFromJSONTyped(json: any, ignoreDiscriminator:
     };
 }
 
-  export function TextToImageResponseToJSON(json: any): TextToImageResponse {
-      return TextToImageResponseToJSONTyped(json, false);
-  }
+export function TextToImageResponseToJSON(json: any): TextToImageResponse {
+    return TextToImageResponseToJSONTyped(json, false);
+}
 
-  export function TextToImageResponseToJSONTyped(value?: TextToImageResponse | null, ignoreDiscriminator: boolean = false): any {
+export function TextToImageResponseToJSONTyped(value?: TextToImageResponse | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

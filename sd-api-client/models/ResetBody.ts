@@ -57,11 +57,11 @@ export function ResetBodyFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     };
 }
 
-  export function ResetBodyToJSON(json: any): ResetBody {
-      return ResetBodyToJSONTyped(json, false);
-  }
+export function ResetBodyToJSON(json: any): ResetBody {
+    return ResetBodyToJSONTyped(json, false);
+}
 
-  export function ResetBodyToJSONTyped(value?: ResetBody | null, ignoreDiscriminator: boolean = false): any {
+export function ResetBodyToJSONTyped(value?: ResetBody | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

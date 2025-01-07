@@ -55,11 +55,11 @@ export function BodyViewControlnetFastloadViewPostFromJSONTyped(json: any, ignor
     };
 }
 
-  export function BodyViewControlnetFastloadViewPostToJSON(json: any): BodyViewControlnetFastloadViewPost {
-      return BodyViewControlnetFastloadViewPostToJSONTyped(json, false);
-  }
+export function BodyViewControlnetFastloadViewPostToJSON(json: any): BodyViewControlnetFastloadViewPost {
+    return BodyViewControlnetFastloadViewPostToJSONTyped(json, false);
+}
 
-  export function BodyViewControlnetFastloadViewPostToJSONTyped(value?: BodyViewControlnetFastloadViewPost | null, ignoreDiscriminator: boolean = false): any {
+export function BodyViewControlnetFastloadViewPostToJSONTyped(value?: BodyViewControlnetFastloadViewPost | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

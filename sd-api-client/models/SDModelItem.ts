@@ -86,11 +86,11 @@ export function SDModelItemFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
-  export function SDModelItemToJSON(json: any): SDModelItem {
-      return SDModelItemToJSONTyped(json, false);
-  }
+export function SDModelItemToJSON(json: any): SDModelItem {
+    return SDModelItemToJSONTyped(json, false);
+}
 
-  export function SDModelItemToJSONTyped(value?: SDModelItem | null, ignoreDiscriminator: boolean = false): any {
+export function SDModelItemToJSONTyped(value?: SDModelItem | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -78,11 +78,11 @@ export function EmbeddingItemFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
-  export function EmbeddingItemToJSON(json: any): EmbeddingItem {
-      return EmbeddingItemToJSONTyped(json, false);
-  }
+export function EmbeddingItemToJSON(json: any): EmbeddingItem {
+    return EmbeddingItemToJSONTyped(json, false);
+}
 
-  export function EmbeddingItemToJSONTyped(value?: EmbeddingItem | null, ignoreDiscriminator: boolean = false): any {
+export function EmbeddingItemToJSONTyped(value?: EmbeddingItem | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

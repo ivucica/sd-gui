@@ -49,11 +49,11 @@ export function CreateResponseFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
-  export function CreateResponseToJSON(json: any): CreateResponse {
-      return CreateResponseToJSONTyped(json, false);
-  }
+export function CreateResponseToJSON(json: any): CreateResponse {
+    return CreateResponseToJSONTyped(json, false);
+}
 
-  export function CreateResponseToJSONTyped(value?: CreateResponse | null, ignoreDiscriminator: boolean = false): any {
+export function CreateResponseToJSONTyped(value?: CreateResponse | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

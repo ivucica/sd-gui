@@ -63,11 +63,11 @@ export function PromptStyleItemFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
-  export function PromptStyleItemToJSON(json: any): PromptStyleItem {
-      return PromptStyleItemToJSONTyped(json, false);
-  }
+export function PromptStyleItemToJSON(json: any): PromptStyleItem {
+    return PromptStyleItemToJSONTyped(json, false);
+}
 
-  export function PromptStyleItemToJSONTyped(value?: PromptStyleItem | null, ignoreDiscriminator: boolean = false): any {
+export function PromptStyleItemToJSONTyped(value?: PromptStyleItem | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

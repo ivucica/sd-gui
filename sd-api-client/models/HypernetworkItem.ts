@@ -56,11 +56,11 @@ export function HypernetworkItemFromJSONTyped(json: any, ignoreDiscriminator: bo
     };
 }
 
-  export function HypernetworkItemToJSON(json: any): HypernetworkItem {
-      return HypernetworkItemToJSONTyped(json, false);
-  }
+export function HypernetworkItemToJSON(json: any): HypernetworkItem {
+    return HypernetworkItemToJSONTyped(json, false);
+}
 
-  export function HypernetworkItemToJSONTyped(value?: HypernetworkItem | null, ignoreDiscriminator: boolean = false): any {
+export function HypernetworkItemToJSONTyped(value?: HypernetworkItem | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -79,11 +79,11 @@ export function ModulesApiModelsProgressResponseFromJSONTyped(json: any, ignoreD
     };
 }
 
-  export function ModulesApiModelsProgressResponseToJSON(json: any): ModulesApiModelsProgressResponse {
-      return ModulesApiModelsProgressResponseToJSONTyped(json, false);
-  }
+export function ModulesApiModelsProgressResponseToJSON(json: any): ModulesApiModelsProgressResponse {
+    return ModulesApiModelsProgressResponseToJSONTyped(json, false);
+}
 
-  export function ModulesApiModelsProgressResponseToJSONTyped(value?: ModulesApiModelsProgressResponse | null, ignoreDiscriminator: boolean = false): any {
+export function ModulesApiModelsProgressResponseToJSONTyped(value?: ModulesApiModelsProgressResponse | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

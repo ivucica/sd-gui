@@ -100,11 +100,11 @@ export function ModulesProgressProgressResponseFromJSONTyped(json: any, ignoreDi
     };
 }
 
-  export function ModulesProgressProgressResponseToJSON(json: any): ModulesProgressProgressResponse {
-      return ModulesProgressProgressResponseToJSONTyped(json, false);
-  }
+export function ModulesProgressProgressResponseToJSON(json: any): ModulesProgressProgressResponse {
+    return ModulesProgressProgressResponseToJSONTyped(json, false);
+}
 
-  export function ModulesProgressProgressResponseToJSONTyped(value?: ModulesProgressProgressResponse | null, ignoreDiscriminator: boolean = false): any {
+export function ModulesProgressProgressResponseToJSONTyped(value?: ModulesProgressProgressResponse | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

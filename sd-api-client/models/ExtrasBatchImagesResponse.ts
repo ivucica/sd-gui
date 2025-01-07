@@ -57,11 +57,11 @@ export function ExtrasBatchImagesResponseFromJSONTyped(json: any, ignoreDiscrimi
     };
 }
 
-  export function ExtrasBatchImagesResponseToJSON(json: any): ExtrasBatchImagesResponse {
-      return ExtrasBatchImagesResponseToJSONTyped(json, false);
-  }
+export function ExtrasBatchImagesResponseToJSON(json: any): ExtrasBatchImagesResponse {
+    return ExtrasBatchImagesResponseToJSONTyped(json, false);
+}
 
-  export function ExtrasBatchImagesResponseToJSONTyped(value?: ExtrasBatchImagesResponse | null, ignoreDiscriminator: boolean = false): any {
+export function ExtrasBatchImagesResponseToJSONTyped(value?: ExtrasBatchImagesResponse | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

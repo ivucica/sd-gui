@@ -83,11 +83,11 @@ export function ScriptArgFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     };
 }
 
-  export function ScriptArgToJSON(json: any): ScriptArg {
-      return ScriptArgToJSONTyped(json, false);
-  }
+export function ScriptArgToJSON(json: any): ScriptArg {
+    return ScriptArgToJSONTyped(json, false);
+}
 
-  export function ScriptArgToJSONTyped(value?: ScriptArg | null, ignoreDiscriminator: boolean = false): any {
+export function ScriptArgToJSONTyped(value?: ScriptArg | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

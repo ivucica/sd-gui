@@ -36,11 +36,11 @@ export function RequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): R
     return json;
 }
 
-  export function RequestToJSON(json: any): Request {
-      return RequestToJSONTyped(json, false);
-  }
+export function RequestToJSON(json: any): Request {
+    return RequestToJSONTyped(json, false);
+}
 
-  export function RequestToJSONTyped(value?: Request | null, ignoreDiscriminator: boolean = false): any {
+export function RequestToJSONTyped(value?: Request | null, ignoreDiscriminator: boolean = false): any {
     return value;
 }
 

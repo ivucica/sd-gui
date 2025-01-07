@@ -99,11 +99,11 @@ export function PredictBodyFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
-  export function PredictBodyToJSON(json: any): PredictBody {
-      return PredictBodyToJSONTyped(json, false);
-  }
+export function PredictBodyToJSON(json: any): PredictBody {
+    return PredictBodyToJSONTyped(json, false);
+}
 
-  export function PredictBodyToJSONTyped(value?: PredictBody | null, ignoreDiscriminator: boolean = false): any {
+export function PredictBodyToJSONTyped(value?: PredictBody | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

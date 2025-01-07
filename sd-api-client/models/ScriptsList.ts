@@ -55,11 +55,11 @@ export function ScriptsListFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
-  export function ScriptsListToJSON(json: any): ScriptsList {
-      return ScriptsListToJSONTyped(json, false);
-  }
+export function ScriptsListToJSON(json: any): ScriptsList {
+    return ScriptsListToJSONTyped(json, false);
+}
 
-  export function ScriptsListToJSONTyped(value?: ScriptsList | null, ignoreDiscriminator: boolean = false): any {
+export function ScriptsListToJSONTyped(value?: ScriptsList | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

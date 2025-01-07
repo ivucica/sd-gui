@@ -76,11 +76,11 @@ export function BodyDetectControlnetDetectPostFromJSONTyped(json: any, ignoreDis
     };
 }
 
-  export function BodyDetectControlnetDetectPostToJSON(json: any): BodyDetectControlnetDetectPost {
-      return BodyDetectControlnetDetectPostToJSONTyped(json, false);
-  }
+export function BodyDetectControlnetDetectPostToJSON(json: any): BodyDetectControlnetDetectPost {
+    return BodyDetectControlnetDetectPostToJSONTyped(json, false);
+}
 
-  export function BodyDetectControlnetDetectPostToJSONTyped(value?: BodyDetectControlnetDetectPost | null, ignoreDiscriminator: boolean = false): any {
+export function BodyDetectControlnetDetectPostToJSONTyped(value?: BodyDetectControlnetDetectPost | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

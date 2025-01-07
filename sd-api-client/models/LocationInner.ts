@@ -36,11 +36,11 @@ export function LocationInnerFromJSONTyped(json: any, ignoreDiscriminator: boole
     return json;
 }
 
-  export function LocationInnerToJSON(json: any): LocationInner {
-      return LocationInnerToJSONTyped(json, false);
-  }
+export function LocationInnerToJSON(json: any): LocationInner {
+    return LocationInnerToJSONTyped(json, false);
+}
 
-  export function LocationInnerToJSONTyped(value?: LocationInner | null, ignoreDiscriminator: boolean = false): any {
+export function LocationInnerToJSONTyped(value?: LocationInner | null, ignoreDiscriminator: boolean = false): any {
     return value;
 }
 

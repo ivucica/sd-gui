@@ -391,11 +391,11 @@ export function StableDiffusionProcessingTxt2ImgFromJSONTyped(json: any, ignoreD
     };
 }
 
-  export function StableDiffusionProcessingTxt2ImgToJSON(json: any): StableDiffusionProcessingTxt2Img {
-      return StableDiffusionProcessingTxt2ImgToJSONTyped(json, false);
-  }
+export function StableDiffusionProcessingTxt2ImgToJSON(json: any): StableDiffusionProcessingTxt2Img {
+    return StableDiffusionProcessingTxt2ImgToJSONTyped(json, false);
+}
 
-  export function StableDiffusionProcessingTxt2ImgToJSONTyped(value?: StableDiffusionProcessingTxt2Img | null, ignoreDiscriminator: boolean = false): any {
+export function StableDiffusionProcessingTxt2ImgToJSONTyped(value?: StableDiffusionProcessingTxt2Img | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -159,11 +159,11 @@ export function ExtrasBatchImagesRequestFromJSONTyped(json: any, ignoreDiscrimin
     };
 }
 
-  export function ExtrasBatchImagesRequestToJSON(json: any): ExtrasBatchImagesRequest {
-      return ExtrasBatchImagesRequestToJSONTyped(json, false);
-  }
+export function ExtrasBatchImagesRequestToJSON(json: any): ExtrasBatchImagesRequest {
+    return ExtrasBatchImagesRequestToJSONTyped(json, false);
+}
 
-  export function ExtrasBatchImagesRequestToJSONTyped(value?: ExtrasBatchImagesRequest | null, ignoreDiscriminator: boolean = false): any {
+export function ExtrasBatchImagesRequestToJSONTyped(value?: ExtrasBatchImagesRequest | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -92,11 +92,11 @@ export function EstimationFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     };
 }
 
-  export function EstimationToJSON(json: any): Estimation {
-      return EstimationToJSONTyped(json, false);
-  }
+export function EstimationToJSON(json: any): Estimation {
+    return EstimationToJSONTyped(json, false);
+}
 
-  export function EstimationToJSONTyped(value?: Estimation | null, ignoreDiscriminator: boolean = false): any {
+export function EstimationToJSONTyped(value?: Estimation | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

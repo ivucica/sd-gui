@@ -97,11 +97,11 @@ export function BodyRoopImageRoopImagePostFromJSONTyped(json: any, ignoreDiscrim
     };
 }
 
-  export function BodyRoopImageRoopImagePostToJSON(json: any): BodyRoopImageRoopImagePost {
-      return BodyRoopImageRoopImagePostToJSONTyped(json, false);
-  }
+export function BodyRoopImageRoopImagePostToJSON(json: any): BodyRoopImageRoopImagePost {
+    return BodyRoopImageRoopImagePostToJSONTyped(json, false);
+}
 
-  export function BodyRoopImageRoopImagePostToJSONTyped(value?: BodyRoopImageRoopImagePost | null, ignoreDiscriminator: boolean = false): any {
+export function BodyRoopImageRoopImagePostToJSONTyped(value?: BodyRoopImageRoopImagePost | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -62,11 +62,11 @@ export function ProgressRequestFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
-  export function ProgressRequestToJSON(json: any): ProgressRequest {
-      return ProgressRequestToJSONTyped(json, false);
-  }
+export function ProgressRequestToJSON(json: any): ProgressRequest {
+    return ProgressRequestToJSONTyped(json, false);
+}
 
-  export function ProgressRequestToJSONTyped(value?: ProgressRequest | null, ignoreDiscriminator: boolean = false): any {
+export function ProgressRequestToJSONTyped(value?: ProgressRequest | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

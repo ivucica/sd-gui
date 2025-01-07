@@ -56,11 +56,11 @@ export function FaceRestorerItemFromJSONTyped(json: any, ignoreDiscriminator: bo
     };
 }
 
-  export function FaceRestorerItemToJSON(json: any): FaceRestorerItem {
-      return FaceRestorerItemToJSONTyped(json, false);
-  }
+export function FaceRestorerItemToJSON(json: any): FaceRestorerItem {
+    return FaceRestorerItemToJSONTyped(json, false);
+}
 
-  export function FaceRestorerItemToJSONTyped(value?: FaceRestorerItem | null, ignoreDiscriminator: boolean = false): any {
+export function FaceRestorerItemToJSONTyped(value?: FaceRestorerItem | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

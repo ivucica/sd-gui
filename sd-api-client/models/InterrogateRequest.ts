@@ -55,11 +55,11 @@ export function InterrogateRequestFromJSONTyped(json: any, ignoreDiscriminator: 
     };
 }
 
-  export function InterrogateRequestToJSON(json: any): InterrogateRequest {
-      return InterrogateRequestToJSONTyped(json, false);
-  }
+export function InterrogateRequestToJSON(json: any): InterrogateRequest {
+    return InterrogateRequestToJSONTyped(json, false);
+}
 
-  export function InterrogateRequestToJSONTyped(value?: InterrogateRequest | null, ignoreDiscriminator: boolean = false): any {
+export function InterrogateRequestToJSONTyped(value?: InterrogateRequest | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

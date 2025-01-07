@@ -65,11 +65,11 @@ export function PNGInfoResponseFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
-  export function PNGInfoResponseToJSON(json: any): PNGInfoResponse {
-      return PNGInfoResponseToJSONTyped(json, false);
-  }
+export function PNGInfoResponseToJSON(json: any): PNGInfoResponse {
+    return PNGInfoResponseToJSONTyped(json, false);
+}
 
-  export function PNGInfoResponseToJSONTyped(value?: PNGInfoResponse | null, ignoreDiscriminator: boolean = false): any {
+export function PNGInfoResponseToJSONTyped(value?: PNGInfoResponse | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

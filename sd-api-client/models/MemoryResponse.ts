@@ -57,11 +57,11 @@ export function MemoryResponseFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
-  export function MemoryResponseToJSON(json: any): MemoryResponse {
-      return MemoryResponseToJSONTyped(json, false);
-  }
+export function MemoryResponseToJSON(json: any): MemoryResponse {
+    return MemoryResponseToJSONTyped(json, false);
+}
 
-  export function MemoryResponseToJSONTyped(value?: MemoryResponse | null, ignoreDiscriminator: boolean = false): any {
+export function MemoryResponseToJSONTyped(value?: MemoryResponse | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

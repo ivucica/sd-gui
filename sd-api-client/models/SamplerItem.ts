@@ -65,11 +65,11 @@ export function SamplerItemFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
-  export function SamplerItemToJSON(json: any): SamplerItem {
-      return SamplerItemToJSONTyped(json, false);
-  }
+export function SamplerItemToJSON(json: any): SamplerItem {
+    return SamplerItemToJSONTyped(json, false);
+}
 
-  export function SamplerItemToJSONTyped(value?: SamplerItem | null, ignoreDiscriminator: boolean = false): any {
+export function SamplerItemToJSONTyped(value?: SamplerItem | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -62,11 +62,11 @@ export function BodyDeoldifyImageDeoldifyImagePostFromJSONTyped(json: any, ignor
     };
 }
 
-  export function BodyDeoldifyImageDeoldifyImagePostToJSON(json: any): BodyDeoldifyImageDeoldifyImagePost {
-      return BodyDeoldifyImageDeoldifyImagePostToJSONTyped(json, false);
-  }
+export function BodyDeoldifyImageDeoldifyImagePostToJSON(json: any): BodyDeoldifyImageDeoldifyImagePost {
+    return BodyDeoldifyImageDeoldifyImagePostToJSONTyped(json, false);
+}
 
-  export function BodyDeoldifyImageDeoldifyImagePostToJSONTyped(value?: BodyDeoldifyImageDeoldifyImagePost | null, ignoreDiscriminator: boolean = false): any {
+export function BodyDeoldifyImageDeoldifyImagePostToJSONTyped(value?: BodyDeoldifyImageDeoldifyImagePost | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

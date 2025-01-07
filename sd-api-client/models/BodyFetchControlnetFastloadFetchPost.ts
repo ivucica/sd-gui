@@ -63,11 +63,11 @@ export function BodyFetchControlnetFastloadFetchPostFromJSONTyped(json: any, ign
     };
 }
 
-  export function BodyFetchControlnetFastloadFetchPostToJSON(json: any): BodyFetchControlnetFastloadFetchPost {
-      return BodyFetchControlnetFastloadFetchPostToJSONTyped(json, false);
-  }
+export function BodyFetchControlnetFastloadFetchPostToJSON(json: any): BodyFetchControlnetFastloadFetchPost {
+    return BodyFetchControlnetFastloadFetchPostToJSONTyped(json, false);
+}
 
-  export function BodyFetchControlnetFastloadFetchPostToJSONTyped(value?: BodyFetchControlnetFastloadFetchPost | null, ignoreDiscriminator: boolean = false): any {
+export function BodyFetchControlnetFastloadFetchPostToJSONTyped(value?: BodyFetchControlnetFastloadFetchPost | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

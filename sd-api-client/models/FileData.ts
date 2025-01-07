@@ -57,11 +57,11 @@ export function FileDataFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
     };
 }
 
-  export function FileDataToJSON(json: any): FileData {
-      return FileDataToJSONTyped(json, false);
-  }
+export function FileDataToJSON(json: any): FileData {
+    return FileDataToJSONTyped(json, false);
+}
 
-  export function FileDataToJSONTyped(value?: FileData | null, ignoreDiscriminator: boolean = false): any {
+export function FileDataToJSONTyped(value?: FileData | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

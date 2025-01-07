@@ -77,11 +77,11 @@ export function UpscalerItemFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
-  export function UpscalerItemToJSON(json: any): UpscalerItem {
-      return UpscalerItemToJSONTyped(json, false);
-  }
+export function UpscalerItemToJSON(json: any): UpscalerItem {
+    return UpscalerItemToJSONTyped(json, false);
+}
 
-  export function UpscalerItemToJSONTyped(value?: UpscalerItem | null, ignoreDiscriminator: boolean = false): any {
+export function UpscalerItemToJSONTyped(value?: UpscalerItem | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

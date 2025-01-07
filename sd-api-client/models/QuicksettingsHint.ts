@@ -57,11 +57,11 @@ export function QuicksettingsHintFromJSONTyped(json: any, ignoreDiscriminator: b
     };
 }
 
-  export function QuicksettingsHintToJSON(json: any): QuicksettingsHint {
-      return QuicksettingsHintToJSONTyped(json, false);
-  }
+export function QuicksettingsHintToJSON(json: any): QuicksettingsHint {
+    return QuicksettingsHintToJSONTyped(json, false);
+}
 
-  export function QuicksettingsHintToJSONTyped(value?: QuicksettingsHint | null, ignoreDiscriminator: boolean = false): any {
+export function QuicksettingsHintToJSONTyped(value?: QuicksettingsHint | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

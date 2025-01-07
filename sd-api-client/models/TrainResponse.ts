@@ -49,11 +49,11 @@ export function TrainResponseFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
-  export function TrainResponseToJSON(json: any): TrainResponse {
-      return TrainResponseToJSONTyped(json, false);
-  }
+export function TrainResponseToJSON(json: any): TrainResponse {
+    return TrainResponseToJSONTyped(json, false);
+}
 
-  export function TrainResponseToJSONTyped(value?: TrainResponse | null, ignoreDiscriminator: boolean = false): any {
+export function TrainResponseToJSONTyped(value?: TrainResponse | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

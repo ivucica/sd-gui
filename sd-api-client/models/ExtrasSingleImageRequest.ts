@@ -150,11 +150,11 @@ export function ExtrasSingleImageRequestFromJSONTyped(json: any, ignoreDiscrimin
     };
 }
 
-  export function ExtrasSingleImageRequestToJSON(json: any): ExtrasSingleImageRequest {
-      return ExtrasSingleImageRequestToJSONTyped(json, false);
-  }
+export function ExtrasSingleImageRequestToJSON(json: any): ExtrasSingleImageRequest {
+    return ExtrasSingleImageRequestToJSONTyped(json, false);
+}
 
-  export function ExtrasSingleImageRequestToJSONTyped(value?: ExtrasSingleImageRequest | null, ignoreDiscriminator: boolean = false): any {
+export function ExtrasSingleImageRequestToJSONTyped(value?: ExtrasSingleImageRequest | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

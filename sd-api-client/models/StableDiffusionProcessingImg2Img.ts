@@ -405,11 +405,11 @@ export function StableDiffusionProcessingImg2ImgFromJSONTyped(json: any, ignoreD
     };
 }
 
-  export function StableDiffusionProcessingImg2ImgToJSON(json: any): StableDiffusionProcessingImg2Img {
-      return StableDiffusionProcessingImg2ImgToJSONTyped(json, false);
-  }
+export function StableDiffusionProcessingImg2ImgToJSON(json: any): StableDiffusionProcessingImg2Img {
+    return StableDiffusionProcessingImg2ImgToJSONTyped(json, false);
+}
 
-  export function StableDiffusionProcessingImg2ImgToJSONTyped(value?: StableDiffusionProcessingImg2Img | null, ignoreDiscriminator: boolean = false): any {
+export function StableDiffusionProcessingImg2ImgToJSONTyped(value?: StableDiffusionProcessingImg2Img | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

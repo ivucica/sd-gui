@@ -63,11 +63,11 @@ export function RealesrganItemFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
-  export function RealesrganItemToJSON(json: any): RealesrganItem {
-      return RealesrganItemToJSONTyped(json, false);
-  }
+export function RealesrganItemToJSON(json: any): RealesrganItem {
+    return RealesrganItemToJSONTyped(json, false);
+}
 
-  export function RealesrganItemToJSONTyped(value?: RealesrganItem | null, ignoreDiscriminator: boolean = false): any {
+export function RealesrganItemToJSONTyped(value?: RealesrganItem | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -78,11 +78,11 @@ export function ScriptInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     };
 }
 
-  export function ScriptInfoToJSON(json: any): ScriptInfo {
-      return ScriptInfoToJSONTyped(json, false);
-  }
+export function ScriptInfoToJSON(json: any): ScriptInfo {
+    return ScriptInfoToJSONTyped(json, false);
+}
 
-  export function ScriptInfoToJSONTyped(value?: ScriptInfo | null, ignoreDiscriminator: boolean = false): any {
+export function ScriptInfoToJSONTyped(value?: ScriptInfo | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

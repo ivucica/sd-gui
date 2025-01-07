@@ -49,11 +49,11 @@ export function PreprocessResponseFromJSONTyped(json: any, ignoreDiscriminator: 
     };
 }
 
-  export function PreprocessResponseToJSON(json: any): PreprocessResponse {
-      return PreprocessResponseToJSONTyped(json, false);
-  }
+export function PreprocessResponseToJSON(json: any): PreprocessResponse {
+    return PreprocessResponseToJSONTyped(json, false);
+}
 
-  export function PreprocessResponseToJSONTyped(value?: PreprocessResponse | null, ignoreDiscriminator: boolean = false): any {
+export function PreprocessResponseToJSONTyped(value?: PreprocessResponse | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

@@ -930,11 +930,11 @@ export function FlagsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Fla
     };
 }
 
-  export function FlagsToJSON(json: any): Flags {
-      return FlagsToJSONTyped(json, false);
-  }
+export function FlagsToJSON(json: any): Flags {
+    return FlagsToJSONTyped(json, false);
+}
 
-  export function FlagsToJSONTyped(value?: Flags | null, ignoreDiscriminator: boolean = false): any {
+export function FlagsToJSONTyped(value?: Flags | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

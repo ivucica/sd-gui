@@ -97,11 +97,11 @@ export function ExtensionItemFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
-  export function ExtensionItemToJSON(json: any): ExtensionItem {
-      return ExtensionItemToJSONTyped(json, false);
-  }
+export function ExtensionItemToJSON(json: any): ExtensionItem {
+    return ExtensionItemToJSONTyped(json, false);
+}
 
-  export function ExtensionItemToJSONTyped(value?: ExtensionItem | null, ignoreDiscriminator: boolean = false): any {
+export function ExtensionItemToJSONTyped(value?: ExtensionItem | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

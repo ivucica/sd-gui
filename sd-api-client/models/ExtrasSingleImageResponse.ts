@@ -56,11 +56,11 @@ export function ExtrasSingleImageResponseFromJSONTyped(json: any, ignoreDiscrimi
     };
 }
 
-  export function ExtrasSingleImageResponseToJSON(json: any): ExtrasSingleImageResponse {
-      return ExtrasSingleImageResponseToJSONTyped(json, false);
-  }
+export function ExtrasSingleImageResponseToJSON(json: any): ExtrasSingleImageResponse {
+    return ExtrasSingleImageResponseToJSONTyped(json, false);
+}
 
-  export function ExtrasSingleImageResponseToJSONTyped(value?: ExtrasSingleImageResponse | null, ignoreDiscriminator: boolean = false): any {
+export function ExtrasSingleImageResponseToJSONTyped(value?: ExtrasSingleImageResponse | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
