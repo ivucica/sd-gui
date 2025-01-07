@@ -24,6 +24,7 @@ models/ImageToImageResponse.ts
 models/InterrogateRequest.ts
 models/LatentUpscalerModeItem.ts
 models/LocationInner.ts
+models/LoraApiJSON.ts
 models/MemoryResponse.ts
 models/ModulesApiModelsProgressResponse.ts
 models/ModulesProgressProgressResponse.ts

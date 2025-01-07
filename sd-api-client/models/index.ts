@@ -23,6 +23,7 @@ export * from './ImageToImageResponse';
 export * from './InterrogateRequest';
 export * from './LatentUpscalerModeItem';
 export * from './LocationInner';
+export * from './LoraApiJSON';
 export * from './MemoryResponse';
 export * from './ModulesApiModelsProgressResponse';
 export * from './ModulesProgressProgressResponse';

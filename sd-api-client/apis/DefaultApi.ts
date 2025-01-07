@@ -35,6 +35,7 @@ import type {
   ImageToImageResponse,
   InterrogateRequest,
   LatentUpscalerModeItem,
+  LoraApiJSON,
   MemoryResponse,
   ModulesApiModelsProgressResponse,
   ModulesProgressProgressResponse,
@@ -100,6 +101,8 @@ import {
     InterrogateRequestToJSON,
     LatentUpscalerModeItemFromJSON,
     LatentUpscalerModeItemToJSON,
+    LoraApiJSONFromJSON,
+    LoraApiJSONToJSON,
     MemoryResponseFromJSON,
     MemoryResponseToJSON,
     ModulesApiModelsProgressResponseFromJSON,
@@ -215,6 +218,11 @@ export interface GetLoraInfoSubfolderTacapiV1LoraInfoFolderLoraNameGetRequest {
 
 export interface GetLoraInfoTacapiV1LoraInfoLoraNameGetRequest {
     loraName: any;
+}
+
+export interface GetLorasFilterableSdapiV1LorasFilterableGetRequest {
+    withPath?: boolean;
+    metadataFilter?: string;
 }
 
 export interface GetLycoInfoSubfolderTacapiV1LycoInfoFolderLycoNameGetRequest {
@@ -1396,9 +1404,45 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Alternative endpoint for getting loras, with exclusion of unimportant arguments.  For instance, path defaults to being omitted, and metadata filter allows passing fieldmasks similar to the idea behind standard \'fields\' argument in:  * https://web.archive.org/web/20220318065415/https://cloud.google.com/apis/docs/system-parameters * https://google.aip.dev/157  Args:   with_path: Whether to include \'path\' in the response.   metadata_filter: A comma separated list of \'fieldpaths\'.  Returns:   list of dicts, information about Loras available to users
+     * Get Loras Filterable
+     */
+    async getLorasFilterableSdapiV1LorasFilterableGetRaw(requestParameters: GetLorasFilterableSdapiV1LorasFilterableGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<LoraApiJSON>>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['withPath'] != null) {
+            queryParameters['with_path'] = requestParameters['withPath'];
+        }
+
+        if (requestParameters['metadataFilter'] != null) {
+            queryParameters['metadata_filter'] = requestParameters['metadataFilter'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/sdapi/v1/loras_filterable`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(LoraApiJSONFromJSON));
+    }
+
+    /**
+     * Alternative endpoint for getting loras, with exclusion of unimportant arguments.  For instance, path defaults to being omitted, and metadata filter allows passing fieldmasks similar to the idea behind standard \'fields\' argument in:  * https://web.archive.org/web/20220318065415/https://cloud.google.com/apis/docs/system-parameters * https://google.aip.dev/157  Args:   with_path: Whether to include \'path\' in the response.   metadata_filter: A comma separated list of \'fieldpaths\'.  Returns:   list of dicts, information about Loras available to users
+     * Get Loras Filterable
+     */
+    async getLorasFilterableSdapiV1LorasFilterableGet(requestParameters: GetLorasFilterableSdapiV1LorasFilterableGetRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<LoraApiJSON>> {
+        const response = await this.getLorasFilterableSdapiV1LorasFilterableGetRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
      * Get Loras
      */
-    async getLorasSdapiV1LorasGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<any>> {
+    async getLorasSdapiV1LorasGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<LoraApiJSON>>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -1410,17 +1454,13 @@ export class DefaultApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        if (this.isJsonMime(response.headers.get('content-type'))) {
-            return new runtime.JSONApiResponse<any>(response);
-        } else {
-            return new runtime.TextApiResponse(response) as any;
-        }
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(LoraApiJSONFromJSON));
     }
 
     /**
      * Get Loras
      */
-    async getLorasSdapiV1LorasGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<any> {
+    async getLorasSdapiV1LorasGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<LoraApiJSON>> {
         const response = await this.getLorasSdapiV1LorasGetRaw(initOverrides);
         return await response.value();
     }
