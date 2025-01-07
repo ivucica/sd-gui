@@ -3720,27 +3720,19 @@
         "properties": {
           "name": {
             "title": "Name",
-            "type": "string",
-            "examples": ["add_details"]
+            "type": "string"
           },
           "alias": {
             "title": "Alias",
-            "type": "string",
-            "examples": ["add_details"]
+            "type": "string"
           },
           "path": {
             "title": "Path",
-            "type": "string",
-            "examples": [
-              "/stable-diffusion/models/Lora/add_details.safetensors"
-            ]
+            "type": "string"
           },
           "metadata": {
             "title": "Metadata",
-            "type": "object",
-            "examples": [
-              { "ss_sd_model_name": "runwayml/stable-diffusion-v1-5" }
-            ]
+            "type": "object"
           }
         }
       },
