@@ -2256,6 +2256,53 @@
         }
       }
     },
+    "/sdapi/v1/loras_filterable": {
+      "get": {
+        "summary": "Get Loras Filterable",
+        "description": "Alternative endpoint for getting loras, with exclusion of unimportant arguments.\n\nFor instance, path defaults to being omitted, and metadata filter allows passing fieldmasks\nsimilar to the idea behind standard 'fields' argument in:\n\n* https://web.archive.org/web/20220318065415/https://cloud.google.com/apis/docs/system-parameters\n* https://google.aip.dev/157\n\nArgs:\n  with_path: Whether to include 'path' in the response.\n  metadata_filter: A comma separated list of 'fieldpaths'.\n\nReturns:\n  list of dicts, information about Loras available to users",
+        "operationId": "get_loras_filterable_sdapi_v1_loras_filterable_get",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "With Path",
+              "type": "boolean",
+              "default": false
+            },
+            "name": "with_path",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": { "title": "Metadata Filter", "type": "string" },
+            "name": "metadata_filter",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Get Loras Filterable Sdapi V1 Loras Filterable Get",
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/LoraApiJSON" }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      }
+    },
     "/sdapi/v1/loras": {
       "get": {
         "summary": "Get Loras",
@@ -2263,7 +2310,15 @@
         "responses": {
           "200": {
             "description": "Successful Response",
-            "content": { "application/json": { "schema": {} } }
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Get Loras Sdapi V1 Loras Get",
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/LoraApiJSON" }
+                }
+              }
+            }
           }
         }
       }
@@ -3657,6 +3712,37 @@
         "required": ["name"],
         "type": "object",
         "properties": { "name": { "title": "Name", "type": "string" } }
+      },
+      "LoraApiJSON": {
+        "title": "LoraApiJSON",
+        "required": ["name", "alias"],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string",
+            "examples": ["add_details"]
+          },
+          "alias": {
+            "title": "Alias",
+            "type": "string",
+            "examples": ["add_details"]
+          },
+          "path": {
+            "title": "Path",
+            "type": "string",
+            "examples": [
+              "/stable-diffusion/models/Lora/add_details.safetensors"
+            ]
+          },
+          "metadata": {
+            "title": "Metadata",
+            "type": "object",
+            "examples": [
+              { "ss_sd_model_name": "runwayml/stable-diffusion-v1-5" }
+            ]
+          }
+        }
       },
       "MemoryResponse": {
         "title": "MemoryResponse",
