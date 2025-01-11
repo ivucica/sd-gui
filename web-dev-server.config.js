@@ -1,4 +1,5 @@
 export default {
+    root: 'dist',
     open: true,
     watch: true,
     appIndex: 'index.html',
