@@ -1,0 +1,7 @@
+/node_modules/
+/dist/
+/samples.txt
+.DS_Store
+*.json.orig
+temp.*
+yarn.lock
