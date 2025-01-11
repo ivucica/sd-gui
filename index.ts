@@ -26,7 +26,7 @@ import '@material/mwc-button';
 import '@material/mwc-select';
 import '@material/mwc-list';
 import '@material/mwc-list/mwc-list-item.js';
-
+import './lora-selector';
 
 // Api generated with openapi-generator-cli generate -g typescript-fetch -i sd-openapi.json -o ./sd-api-client
 // (Binary might be called openapi-generator)
@@ -38,7 +38,6 @@ export class Text2imgApp extends LitElement {
     /* Add your styles here */
   `;
 
-  private api = new DefaultApi(new Configuration({ basePath: 'http://your-api-endpoint' }));
   @state() private models: any[] = []; ;
   @state() private loras: any[] = [];
   @state() private selectedModel: any = null;
@@ -54,29 +53,25 @@ export class Text2imgApp extends LitElement {
   @state() private progress: number = 0;
   @state() private generatedImage: string = '';
 
+  private api = new DefaultApi(new Configuration({ basePath: 'http://10.0.64.161:7860' }));
 
   async firstUpdated() {
     this.models = await this.api.getSdModelsSdapiV1SdModelsGet();
-    this.loras = await this.api.getLorasSdapiV1LorasGet();
+    // If the api contains the filtered loras endpoint, use that instead,
+    // as it will be faster. However this is not doable in Typescript, not
+    // easily at least: https://github.com/microsoft/TypeScript/issues/449
+    //
+    // Let's pretend the new API exists.
+    //if (this.api.getLorasSdapiV1LorasGetFiltered) {
+      this.loras = await this.api.getLorasFilterableSdapiV1LorasFilterableGet({withPath: false, metadataFilter: 'no_metadata_for_now'});
+    //}
+    // if it doesn't, use the old one. We should use it in a try-catch block
+    // anyway in case the client has it, but the server doesn't.
+    // this.loras = await this.api.getLorasSdapiV1LorasGet();
   }
 
   handleModelChange(event: any) {
     this.selectedModel = event.target.value;
-  }
-
-  handleLoraDragStart(event: any, lora: any) {
-    event.dataTransfer.setData('lora', JSON.stringify(lora));
-  }
-
-  handleLoraDrop(event: any) {
-    event.preventDefault();
-    const lora = JSON.parse(event.dataTransfer.getData('lora'));
-    this.selectedLoras = [...this.selectedLoras, { ...lora, weight: 0.8 }];
-  }
-
-  handleLoraWeightChange(event: any, index: number) {
-    const newWeight = parseFloat(event.target.value);
-    this.selectedLoras[index].weight = newWeight;
   }
 
   async handleSubmit() {
@@ -87,6 +82,11 @@ export class Text2imgApp extends LitElement {
             // ... other parameters
         }
     });
+
+    // See what we got back.
+    console.log(response);
+    // Omitting the rest for now.
+    return;
 
     // Poll for progress and update the UI
     let skip = true;
@@ -118,40 +118,12 @@ export class Text2imgApp extends LitElement {
           `)}
         </mwc-select>
 
-        <div>
-          <h3>Available Loras</h3>
-          <mwc-list
-            @drop="${this.handleLoraDrop}"
-            @dragover="${(event: any) => event.preventDefault()}"
-          >
-            ${this.loras.map((lora) => html`
-              <mwc-list-item
-                graphic="avatar"
-                draggable="true"
-                @dragstart="${(event: any) => this.handleLoraDragStart(event, lora)}"
-              >
-                ${lora.name}
-              </mwc-list-item>
-            `)}
-          </mwc-list>
-        </div>
-
-        <div>
-          <h3>Selected Loras</h3>
-          <mwc-list>
-            ${this.selectedLoras.map((lora, index) => html`
-              <mwc-list-item>
-                <span>${lora.name}</span>
-                <mwc-textfield
-                  type="number"
-                  label="Weight"
-                  value="${lora.weight}"
-                  @input="${(event: any) => this.handleLoraWeightChange(event, index)}"
-                ></mwc-textfield>
-              </mwc-list-item>
-            `)}
-          </mwc-list>
-        </div>
+        <lora-selector
+          .loras="${this.loras}"
+          @selected-loras-changed="${(e: CustomEvent) => {
+            this.selectedLoras = e.detail;
+          }}"
+        ></lora-selector>
 
         <mwc-textfield
           label="Prompt"
