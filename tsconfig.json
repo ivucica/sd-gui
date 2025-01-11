@@ -5,6 +5,7 @@
     "target": "ES2015",
     "lib": ["ES2015", "DOM"],
     "moduleResolution": "node",
+    "module": "ESNext", // Added to specify ES module system
     "skipLibCheck": true // Add this line to skip type checking of declaration files
   }
 }
