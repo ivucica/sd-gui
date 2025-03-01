@@ -1,0 +1,5 @@
+[submodule "vendor/github.com/drawthingsai/draw-things-community"]
+	path = vendor/github.com/drawthingsai/draw-things-community
+	url = https://github.com/drawthingsai/draw-things-community
+	# Note: we only really want Libraries/GRPC/.../*.proto files.
+
