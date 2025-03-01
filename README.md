@@ -115,3 +115,52 @@ index d3ea369a..6b5c02d4 100644
  
      @app.post("/sdapi/v1/refresh-loras")
 ```
+
+## Interesting endpoints
+
+See most of them at `/docs`.
+
+### `/sdapi/v1/loras` / `/sdapi/v1/loras_filterable`
+
+Nearly identical endpoints, the latter added by the patch documented above.
+
+These list all available loras.
+
+### `/file=/path/to/stable-diffusion-webui/extensions/a1111-sd-webui-tagcomplete/tags/temp/lora.txt`
+
+Added by the a1111-sd-webui-tagcomplete extension. Lists just hashes and names
+of LoRAs. CSV. Exact path presumably obtainable by fetching config from 
+`/sdapi/v1/cmd-flags` from `data_dir` . (`/config` gives the entire Gradio UI
+layout, `/sdapi/v1/options` gives user configurable options.)
+
+Based on timestamp, likely generated at startup. Possibly sufficient if
+available, in place of `loras_filterable`.
+
+Also: `hyp.txt`, `lyco.txt`, `emb.txt`.
+
+`model-keyword` extension writes `lora-keyword.txt` into its directory as well
+with pipe-separated keywords that can be used for a lora, prefixed by model hash
+and comma and space.
+
+### `/sdapi/v1/progress?skip_current_image=false`
+
+Contains job ID, timestamp, and `current_image` as the preview.
+
+#### `/internal/progress`
+
+ID obtained can be used with `/internal/progress` as well, until completion.
+That progress endpoint has a dataurl with image preview in `live_preview` arg,
+but its POST has `id_task` of the task/job ID, `id_live_preview` set to e.g.
+`-1` or to `false`, or sequentially incrementing with each request whereupon the
+reply will repeat that number.
+
+### `/sdapi/v1/txt2img`
+
+Main api. Not tested: how the result is received.
+
+Allows forcing a task ID.
+
+### `/queue/join`
+
+WebSockets endpoint. Seemingly used to just receive a live notification of a
+response. Gradio internal, likely.
